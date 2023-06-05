@@ -1,7 +1,2 @@
 #!/bin/bash
-
-PY_FILE="$PYFILE"
-
-#Run
-python3 "$PY_FILE"
-
+python3 $PYFILE
