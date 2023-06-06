@@ -5,4 +5,3 @@ for d1 in range(0, 10):
             print("{}{}".format(d1, d2))
         else:
             print("{}{}".format(d1, d2), end=", ")
-
