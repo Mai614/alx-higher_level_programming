@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 from sys import argv
 if __name__ == "__main__":
+ """Print the addition of all arguments."""
     count = len(argv)
     add = 0
     if count == 1:
