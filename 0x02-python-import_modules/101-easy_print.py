@@ -1,2 +1,4 @@
 #!/usr/bin/python3
-import builtins; builtins.print("#pythoniscool")
+if __name__ == "__main__":
+   import builtins; builtins.print("#pythoniscool")
+
