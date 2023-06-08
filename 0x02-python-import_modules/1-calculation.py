@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
+   """Print the sum, sub, mul and div of 10 and 5."""
    a = 10
    b = 5
 
