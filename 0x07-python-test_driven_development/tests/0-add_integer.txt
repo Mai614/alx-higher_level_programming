@@ -1,29 +1,37 @@
->>> from my_module import add_integer
+>>> add_integer = __import__('0-add_integer').add_integer
 
-# Test case 1: Testing addition of two integers
->>> add_integer(2, 3)
-5
-
-# Test case 2: Testing addition of integer and float
->>> add_integer(5, 2.5)
-7
-
-# Test case 3: Testing addition of two floats
->>> add_integer(1.5, 2.5)
-4
-
-# Test case 4: Testing addition with default argument
->>> add_integer(5)
-103
-
-# Test case 5: Testing addition with non-numeric value for a
->>> add_integer("2", 3)
+>>> add_integer(0, 0)
+0
+>>> add_integer(15, 0)
+15
+>>> add_integer(0, 15)
+15
+>>> add_integer(-2, 2)
+0
+>>> add_integer(2, -2)
+0
+>>> add_integer(2)
+100
+>>> add_integer()
 Traceback (most recent call last):
-    ...
-TypeError: a must be an integer or float
-
-# Test case 6: Testing addition with non-numeric value for b
->>> add_integer(2, "3")
+TypeError: add_integer() missing 1 required positional argument: 'a'
+>>> add_integer('a', 'b')
 Traceback (most recent call last):
-    ...
-TypeError: b must be an integer or float
+TypeError: a must be an integer
+>>> add_integer('a', 42)
+Traceback (most recent call last):
+TypeError: a must be an integer
+>>> add_integer('a')
+Traceback (most recent call last):
+TypeError: a must be an integer
+>>> add_integer(42, 'b')
+Traceback (most recent call last):
+TypeError: b must be an integer
+>>> add_integer(float('inf'), 0)
+Traceback (most recent call last):
+...
+OverflowError: cannot convert float infinity to integer
+>>> add_integer(0, float('nan'))
+Traceback (most recent call last):
+...
+ValueError: cannot convert float NaN to integer
