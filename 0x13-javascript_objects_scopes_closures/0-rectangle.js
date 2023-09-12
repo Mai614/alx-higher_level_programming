@@ -3,3 +3,5 @@
 class Rectangle {
 
 }
+const rect = new Rectangle();
+console.log(rect);
