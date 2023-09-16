@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-""" a script that takes in arguments and displays all values in the states table of hbtn_0e_0_usa """
+""" a script that takes in arguments and displays all values\
+     in the states table of hbtn_0e_0_usa """
 
 import MySQLdb
 import sys
