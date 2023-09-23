@@ -8,6 +8,7 @@ from sqlalchemy.orm import relationship
 mymetadata = MetaData()
 Base = declarative_base(metadata=mymetadata)
 
+
 class State(Base):
     """ Class with id and name"""
     __tablename__ = 'states'
