@@ -1,23 +1,26 @@
 #!/usr/bin/node
 
 const request = require('request');
-
 // Get the API URL from the command line arguments
-const apiUrl = process.argv[2];
 
-const characterId = 18;
+const starWarsUri = process.argv[2];
+let times = 0;
 
-request(apiUrl, (error, response, body) => {
-  if (error) {
-    console.error(`Error: ${error}`);
-  } else {
-    const filmsData = JSON.parse(body);
+request(starWarsUri, function (_err, _res, body) {
+  body = JSON.parse(body).results;
 
-    const moviesWithWedgeAntilles = filmsData.results.filter((movie) => {
-      return movie.characters.includes(`https://swapi-api.alx-tools.com/api/people/${characterId}/`);
-    });
+  for (let i = 0; i < body.length; ++i) {
+    const characters = body[i].characters;
 
-    console.log(`Number of movies with Wedge Antilles: ${moviesWithWedgeAntilles.length}`);
+    for (let j = 0; j < characters.length; ++j) {
+      const character = characters[j];
+      const characterId = character.split('/')[5];
+
+      if (characterId === '18') {
+        times += 1;
+      }
+    }
   }
-});
 
+  console.log(times);
+});
